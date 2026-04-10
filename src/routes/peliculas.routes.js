@@ -9,10 +9,14 @@ import {
 
 const router = express.Router();
 
-router.post("/", crearPelicula);
-router.get("/", obtenerPeliculas);
-router.get("/:id", obtenerPelicula);
-router.put("/:id", actualizarPelicula);
-router.delete("/:id", eliminarPelicula);
+// 🔥 PRIMERO esta
+router.get("/peliculas", obtenerPeliculas);
+
+// 🔥 DESPUÉS esta
+router.get("/peliculas/:id", obtenerPelicula);
+
+router.post("/peliculas", crearPelicula);
+router.put("/peliculas/:id", actualizarPelicula);
+router.delete("/peliculas/:id", eliminarPelicula);
 
 export default router;
